@@ -12,7 +12,7 @@
 
 // --------------------1) Create a function that takes in a number (greater than 2) and returns an array that length containing the numbers of the Fibonacci sequence.
 
-// // // // a) Create a test with expect statements for each of the variables provided.
+// // // a) Create a test with expect statements for each of the variables provided.
 // describe("greaterthan2", () => {
 //   it("fibonacci sequence", () => {
 //     expect(fibonacci(6)).toEqual("[1, 1, 2, 3, 5, 8]")
@@ -53,49 +53,59 @@
 // a) Create a test with expect statements for each of the variables provided.
 
 
-// describe("sorter", () => {
-//   it("sorted from least to greatest", () => {
-//     expect(sorter(studyMinutesWeek1)).toEqual([15, 15, 20, 30, 30, 60, 90])
-//     expect(sorter(studyMinutesWeek2)).toEqual([10, 15, 18, 20, 45, 60, 65])
-//   })
-// })
+describe("sorter", () => {
+  it("sorted from least to greatest", () => {
+    expect(sorter(studyMinutesWeek1)).toEqual([15, 15, 20, 30, 30, 60, 90])
+    expect(sorter(studyMinutesWeek2)).toEqual([10, 15, 20, 45, 60, 65,100])
+  })
+})
 
 
-// const studyMinutesWeek1 = {
-//   sunday: 90,
-//   monday: 30,
-//   tuesday: 20,
-//   wednesday: 15,
-//   thursday: 30,
-//   friday: 15,
-//   saturday: 60
-// }
-// // Expected output: [15, 15, 20, 30, 30, 60, 90]
+const studyMinutesWeek1 = {
+  sunday: 90,
+  monday: 30,
+  tuesday: 20,
+  wednesday: 15,
+  thursday: 30,
+  friday: 15,
+  saturday: 60
+}
+// Expected output: [15, 15, 20, 30, 30, 60, 90]
 
-// const studyMinutesWeek2 = {
-//   sunday: 18,
-//   monday: 10,
-//   tuesday: 45,
-//   wednesday: 60,
-//   thursday: 20,
-//   friday: 15,
-//   saturday: 65
-// }
-// // Expected output: [10, 15, 18, 20, 45, 60, 65]
+const studyMinutesWeek2 = {
+  sunday: 100,
+  monday: 10,
+  tuesday: 45,
+  wednesday: 60,
+  thursday: 20,
+  friday: 15,
+  saturday: 65
+}
+// Expected output: [10, 15, 20, 45, 60, 65,100]
 
-// // b) Create the function that makes the test pass.
-// // pseudo code :input an object 
-//   // Output and ordered array from least to greatest 
-//   // create a function that can take and turn an Object into an array, using the Object.Values(array) .
-//   // and then sorting them from least to greatest using the .sort
+// b) Create the function that makes the test pass.
+// pseudo code :input an object 
+  // Output and ordered array from least to greatest 
+  // create a function that can take and turn an Object into an array, using the Object.Values(array) .
+  // and then sorting them from least to greatest using the .sort
 
-// const sorter = (array)=> {
-// return Object.values(array).sort()
+//   Student Commment: so i git 10,100,15,20,45,60,65. i see in the MDN docs that you can add (a-b)
+//  add a pareameter but its return NaN
+// 💪🏾 💪🏾 💪🏾 💪🏾 💪🏾 💪🏾 so in the doc it had a seperate function that you can push into the sort(right here). I apreatiate the feed back .
+
+
+const compareAmount = (a,b)=>{
+    return a-b;
+}
+
+
+const sorter = (array)=> {
+return Object.values(array).sort(compareAmount)
   
-// }
+}
 
 
-// // --------------------3) Create a function that takes in an array and returns an array of the accumulating sum. An empty array should return an empty array.
+// --------------------3) Create a function that takes in an array and returns an array of the accumulating sum. An empty array should return an empty array.
 // describe("accumulatedSum", () => {
 //   it("add it all up ", () => {
 //     expect(accumulatedSum(accountTransactions1)).toEqual([100, 83, 60, 51])
